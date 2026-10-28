@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eee7d8">
+<meta name="description" content="200 câu trắc nghiệm Nhập môn CNTT dựa trên tài liệu ôn tập, có xác nhận từng câu, giải thích từng lựa chọn và lưu tiến độ.">
+<title>Học đường — 200 câu hỏi Nhập môn CNTT</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23eee7d8'/%3E%3Ctext x='32' y='46' font-size='46' text-anchor='middle' fill='%23592f22'%3E%E2%9D%A6%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/NotoSans-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="./fonts/NotoSerif-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="./styles.css?v=2">
+<script src="./questions.js" defer></script>
+<script src="./app.js?v=2" defer></script>
+</head>
+<body>
+<a class="skip" href="#question-card">Đến câu hỏi</a>
+<div class="page-frame">
+<header class="masthead">
+<a class="brand" href="./index.html" aria-label="Học đường — trang đầu"><span class="brand-mark" aria-hidden="true">❧</span><span>HỌC ĐƯỜNG<small>TỦ SÁCH TRI THỨC SỐ</small></span></a>
+<div class="edition"><span>NHẬP MÔN CÔNG NGHỆ THÔNG TIN</span><small>Ấn bản ôn tập · 200 câu hỏi</small></div>
+<button class="text-btn reset-open" id="reset-top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1.5 7M4 4v6h6"/></svg>Làm lại</button>
+</header>
+<h1 class="sr-only">Ôn tập Nhập môn Công nghệ thông tin — 200 câu trắc nghiệm</h1>
+<main class="study-layout" id="study">
+<aside class="sidebar" aria-label="Chương học và tiến độ">
+<div class="sidebar-label"><h2>MỤC LỤC</h2><span>XII CHƯƠNG</span></div>
+<nav id="chapters" aria-label="Chọn chương"></nav>
+<div class="sidebar-note"><span class="note-flower" aria-hidden="true">❧</span><p>“Học từng chút,<br>hiểu từng điều.”</p><small>Mỗi lời giải là một lần học lại.</small></div>
+<a class="source-link" href="./tai-lieu.pdf" target="_blank" rel="noopener">↗ Đọc tài liệu gốc <span>100 trang PDF</span></a>
+<a class="source-link" href="./hoc-duong-source.zip" download>↓ Tải mã nguồn <span>HTML · CSS · JavaScript</span></a>
+</aside>
+<section class="study-main" aria-label="Luyện tập trắc nghiệm">
+<div class="progress-panel"><div><span class="mini-label">HÀNH TRÌNH CỦA BẠN</span><p><strong id="done-count">0</strong><span> / 200 câu đã xác nhận</span></p></div><div class="score-pair"><span><i class="dot correct"></i><b id="right-count">0</b> đúng</span><span><i class="dot wrong"></i><b id="wrong-count">0</b> sai</span></div><div class="progress-track" role="progressbar" aria-label="Tiến độ toàn bộ bài" aria-valuemin="0" aria-valuemax="200" aria-valuenow="0" id="progress"><div id="progress-fill"></div></div></div>
+<div class="mobile-controls-row"><button class="outline-btn" id="mobile-controls-toggle" aria-expanded="false" aria-controls="study-controls">Chương &amp; bộ lọc <span aria-hidden="true">⌄</span></button><button class="outline-btn" id="map-open-mobile">Sổ câu hỏi <span>200</span></button></div>
+<div class="study-controls" id="study-controls" data-expanded="false"><label class="mobile-chapter-picker" for="mobile-chapter"><span>Chương học</span><select id="mobile-chapter" aria-label="Chọn chương học"></select></label>
+<div class="study-toolbar"><label class="filter-label" for="filter">Hiển thị <select id="filter"><option value="all">Tất cả câu hỏi</option><option value="unanswered">Chưa xác nhận</option><option value="wrong">Câu trả lời sai</option><option value="correct">Câu trả lời đúng</option></select></label><button class="outline-btn" id="map-open"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="5" height="5"/><rect x="15" y="4" width="5" height="5"/><rect x="4" y="15" width="5" height="5"/><rect x="15" y="15" width="5" height="5"/></svg> Sổ câu hỏi <span id="map-count">200</span></button></div>
+</div>
+<div class="section-heading"><div><p id="chapter-number" class="eyebrow">CHƯƠNG I</p><h2 id="chapter-title">Nhập môn & thế giới CNTT</h2></div><span id="chapter-pages">Trang 1–12</span></div>
+<div id="completion" class="completion" hidden><span>❦</span><div><h3>Đã đi hết một hành trình!</h3><p id="completion-text"></p></div></div>
+<article class="question-card" id="question-card" tabindex="-1">
+<div class="card-top"><span id="question-number">CÂU 001</span><span id="question-status" class="status">Chưa trả lời</span></div>
+<fieldset id="question-field"><legend id="question-text"></legend><p class="choice-hint" id="choice-hint">Chọn một đáp án, rồi nhấn xác nhận.</p><div id="options" class="options"></div></fieldset>
+<div class="card-actions"><span class="single-note" id="answer-note"><span aria-hidden="true">◇</span> Mỗi câu có một đáp án đúng</span><button class="primary-btn" id="confirm" disabled>Xác nhận đáp án <span aria-hidden="true">→</span></button></div>
+<section class="feedback" id="feedback" aria-live="polite" aria-atomic="true" hidden></section>
+</article>
+<div class="empty-state" id="empty-state" hidden><span>❦</span><h3 id="empty-title">Chưa có câu hỏi phù hợp</h3><p id="empty-text"></p><button id="show-all" class="outline-btn">Xem tất cả câu hỏi</button></div>
+<div class="question-nav" id="question-nav"><button id="previous" class="text-btn">← Câu trước</button><span id="position">1 / 200</span><button id="next" class="text-btn">Câu tiếp →</button></div>
+<p class="save-message" id="save-message"><span aria-hidden="true">◈</span> Tiến độ được lưu tự động trên trình duyệt này.</p>
+</section>
+</main>
+<footer class="site-footer"><span>❧ HỌC ĐƯỜNG</span><p>Biên soạn từ <a href="./tai-lieu.pdf" target="_blank" rel="noopener">on_tap.pdf</a> · Học chậm mà chắc.</p><small>200 CÂU · 12 CHƯƠNG · CÓ LỜI GIẢI</small></footer>
+</div>
+<dialog id="map-dialog" aria-labelledby="map-title"><div class="dialog-top"><div><p class="eyebrow">TRA CỨU NHANH</p><h2 id="map-title">Sổ câu hỏi</h2></div><button class="icon-btn close-map" aria-label="Đóng sổ câu hỏi">×</button></div><p class="dialog-desc">Chọn một số để đến câu hỏi. Mỗi ô ghi lại kết quả đã xác nhận.</p><div class="map-legend"><span><i class="dot correct"></i>Đúng</span><span><i class="dot wrong"></i>Sai</span><span><i class="dot selected"></i>Đã chọn</span><span><i class="dot blank"></i>Chưa làm</span></div><div id="question-map"></div><div class="dialog-bottom"><button class="outline-btn close-map">Quay lại học</button></div></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-top"><div><p class="eyebrow">MỘT KHỞI ĐẦU MỚI</p><h2 id="reset-title">Làm lại từ đầu?</h2></div><button class="icon-btn" id="reset-close" aria-label="Đóng">×</button></div><p class="dialog-desc">Toàn bộ lựa chọn, kết quả và tiến độ của 200 câu trên trình duyệt này sẽ được xóa.</p><div class="reset-actions"><button class="outline-btn" id="reset-cancel">Tiếp tục học</button><button class="primary-btn" id="reset-confirm">Làm lại toàn bộ</button></div></dialog>
+<noscript><div class="noscript">Bạn cần bật JavaScript trong trình duyệt để làm bài trắc nghiệm.</div></noscript>
+</body></html>
